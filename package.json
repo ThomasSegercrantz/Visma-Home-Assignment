@@ -1,0 +1,31 @@
+{
+  "name": "visma-home-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "agent": "node tools/ai-agent.mjs",
+    "test:with-agent": "node -e \"const {spawnSync}=require('child_process'); const r=spawnSync('npx',['playwright','test'],{stdio:'inherit',shell:true}); spawnSync('node',['tools/ai-agent.mjs'],{stdio:'inherit',shell:true}); process.exit(r.status ?? 0);\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasSegercrantz/Visma-Home-Assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ThomasSegercrantz/Visma-Home-Assignment/issues"
+  },
+  "homepage": "https://github.com/ThomasSegercrantz/Visma-Home-Assignment#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "openai": "^6.22.0"
+  }
+}
